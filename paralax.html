@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kelinci</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body{
+            background: linear-gradient(black, #38073b
+            );
+            font-family: 'Acme', sans-serif;
+        }
+
+        .paralax{
+            position: relative;
+            width: 100%;
+            height: 200vh;
+            padding: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .paralax::before{
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(to top, #c4c2c3, transparent);
+            z-index: 1000;
+        }
+        .paralax img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+        }
+
+        .paralax img#meteor{
+            z-index: 100;
+        }
+
+        #text{
+            position: absolute;
+            font-size: 4.8em;
+            color: white;
+            letter-spacing: 2px;
+            text-align: center;
+            text-shadow: 6px 6px 10 px grey;
+            bottom: -100px;
+        }
+
+        #button{
+            position: absolute;
+            font-size: 1em;
+            color: black;
+            background-color: white;
+            padding: 10px 50px;
+            border-radius: 25px;
+            text-decoration: none;
+            transform: translateY(100px);
+            bottom: -100px;
+        }
+
+        .deskripsi{
+            position: relative;
+            padding: 10em;
+            background-color: #c4c2c3;
+            letter-spacing: 2px;
+            line-height: 40px;
+        }
+        .deskripsi p {
+            width: 700px;
+            
+        }
+
+        .deskripsi p{
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="paralax">
+        <img src="stars.png" id="stars">
+        <img src="rocket.png" id="roket">
+       <img src="meteorid.png" id="meteor">
+       <h1 id="text">Everything <br>About You</h1>
+        <a href="#" id="button">Explore</a>
+    </div>
+    <div class="deskripsi">
+        <h2>You Are Special To Me</h2>
+        <br>
+        <p>You're the only one who i wouldn't mind lossing sleep for, the only one who i can never get tried of talking to, and the only one who crosses my mind constantly throughout the day. You're the only one who can make me smile without the intention to and affect my emotions with every actions of yours
+            <br>
+            <br>
+            acbbcicbdceiwchjscnlsdvbcegfibcqbeveqbvbieqpvdbusonsgdcbsabc Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ad itaque maxime, temporibus ducimus voluptatibus, laudantium, eligendi architecto saepe pariatur dignissimos enim repellendus! Officiis, assumenda labore voluptatem ullam tempore error?
+            
+        </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let rocket = document.getElementById('roket');
+        let meteor = document.getElementById('meteor');
+        let text = document.getElementById('text');
+        let button = document.getElementById('button');
+
+        window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        stars.style.left = value * 0.5 + 'px';
+        roket.style.top = value * 0.75 + 'px';
+        text.style.marginBottom = value * 1 + 'px';
+        button.style.marginBottom = value * 1 + 'px';
+        })
+    </script>
+</body>
+</html>
